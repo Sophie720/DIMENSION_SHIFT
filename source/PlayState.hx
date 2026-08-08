@@ -1,8 +1,6 @@
 package;
 
 import flixel.util.FlxColor;
-import game.dialogue.Dialogue;
-import game.dialogue.DialogueHandler;
 
 class PlayState extends ShiftState
 {

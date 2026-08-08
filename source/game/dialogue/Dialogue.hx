@@ -30,14 +30,15 @@ class Dialogue extends ShiftSpriteGroup
         scrollFactor.set();
 
         box = new ShiftSprite();
-        box.makeGraphic(FlxG.width - 40, Math.round((FlxG.height/3) - 20), 0x000000);
-
+		box.makeGraphic(FlxG.width - 40, Math.round((FlxG.height / 2.5) - 20), FlxColor.BLACK);
+        
         textSpr = new FlxTypeText(box.x + 10, box.y + 10, Math.round(box.width) - 10, text, 16);
 		textSpr.completeCallback = function() {
 			done = true;
 		};
         textSpr.start();
 
+		x += 20;
         y = FlxG.height - box.height - 20;
 
         add(box);
@@ -53,10 +54,14 @@ class Dialogue extends ShiftSpriteGroup
 		if (curFrame < 5)
 			return;
 
-		if (Controls.ACCEPT_P) {
+		if (Controls.BACK_P) {
 			if (skippable)
+			{
 				textSpr.skip();
+			}
+		}
 
+		if (Controls.ACCEPT_P) {
 			if (done) {
 				destroy();
 			}
