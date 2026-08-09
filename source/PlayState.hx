@@ -12,9 +12,8 @@ class PlayState extends ShiftState
 		add(bg);
 		super.create();
 
-		DialogueHandler.startDialogue('This is a test!');
-		DialogueHandler.startDialogue('and some more and more');
-		DialogueHandler.startDialogue('We can have as much dialogue as we want it works in a cool queue');
+		DialogueHandler.startDialogue('test1');
+		DialogueHandler.startDialogue('test2');
 	}
 
 	override public function update(elapsed:Float)

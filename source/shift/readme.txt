@@ -1,0 +1,1 @@
+A simple library of objects used to edit base Flixel objects

@@ -40,9 +40,6 @@
 	<haxelib name="flixel-addons" />
 	<haxelib name="hxscript"/>
 
-	<!--In case you want to use the ui package-->
-	<!--<haxelib name="flixel-ui" />-->
-
 	<!-- ______________________________ Haxedefines _____________________________ -->
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 	<haxedef name="message.reporting" value="pretty" />

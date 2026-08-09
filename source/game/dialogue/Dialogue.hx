@@ -4,6 +4,7 @@ import flixel.addons.text.FlxTypeText;
 
 typedef DialogueParameters = {
 	@:optional var skippable:Bool; // defaults to true
+	@:optional var sounds:Array<String>;
 }
 
 class Dialogue extends ShiftSpriteGroup
@@ -13,6 +14,7 @@ class Dialogue extends ShiftSpriteGroup
     public var text:String;
 
 	public var skippable:Bool = true;
+	public var sounds:Array<String> = ['beep'];
 	public var done:Bool = false;
 
 	function new(text:String, ?parameters:DialogueParameters)
@@ -21,6 +23,8 @@ class Dialogue extends ShiftSpriteGroup
 		if (parameters != null) {
 			if (parameters?.skippable != null)
 				skippable = parameters.skippable;
+			if (parameters?.sounds != null)
+				sounds = parameters.sounds;
 		}
         super();
     }
@@ -36,6 +40,14 @@ class Dialogue extends ShiftSpriteGroup
 		textSpr.completeCallback = function() {
 			done = true;
 		};
+		textSpr.setFormat(Paths.getFont('font'), 16);
+		var soundArr:Array<FlxSound> = new Array();
+		for (sound in sounds)
+		{
+			var curSound = FlxG.sound.load(Paths.getSound(sound));
+			soundArr.push(curSound);
+		}
+		textSpr.sounds = soundArr;
         textSpr.start();
 
 		x += 20;

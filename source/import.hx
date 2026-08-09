@@ -1,7 +1,10 @@
 #if !macro
-import backend.Controls;
+import backend.*;
 import flixel.*;
 import flixel.util.FlxColor;
+import flixel.sound.*;
 import game.dialogue.DialogueHandler;
 import shift.*;
+
+using StringTools;
 #end
