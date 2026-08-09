@@ -1,6 +1,7 @@
 package backend;
 
 import sys.io.File;
+import sys.FileSystem;
 
 class Language
 {
@@ -11,6 +12,20 @@ class Language
 
     inline public static function getPhrase(key:String):String
         return languages.get(language).data.get(key);
+
+    public static function init()
+    {
+        for (file in FileSystem.readDirectory(Paths.ASSETS + 'data/lang/'))
+        {
+            file = file.toLowerCase();
+            if (file.endsWith('.txt'))
+            {
+                var lang = file.substring(0, file.length - 4);
+                trace(lang);
+                languages.set(lang, new Language(lang));
+            }
+        }
+    }
 
     public function new(lang:String)
     {

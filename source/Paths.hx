@@ -24,7 +24,7 @@ class Paths {
 			return '$ASSETS$file';
 	}
 
-	public static function getFile(file:String):String
+	public static function getFile_append(file:String):String
 	{
 		var content:String = '';
 		if (FileSystem.exists('$ASSETS$file'))
@@ -40,7 +40,7 @@ class Paths {
 	}
 
 	inline public static function getLanguage(file:String)
-		return getFile('data/lang/$file.txt');
+		return getFile_append('data/lang/$file.txt');
 
 	inline public static function getImage(file:String)
 		return getPath('images/$file.png');
