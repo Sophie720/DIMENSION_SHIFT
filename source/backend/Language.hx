@@ -9,6 +9,7 @@ class Language
     public static var languages:Map<String, Language> = new Map();
 
     public var data:Map<String, String> = new Map();
+		public var lang:String;
 
     inline public static function getPhrase(key:String):String
         return languages.get(language).data.get(key);
@@ -29,6 +30,7 @@ class Language
 
     public function new(lang:String)
     {
+				this.lang = lang;
         try 
         {
             var file = Paths.getLanguage(lang);
