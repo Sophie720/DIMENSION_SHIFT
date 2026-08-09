@@ -1,0 +1,3 @@
+_lang=Español
+test1=This is Spanish trust
+test2=no hablo español :(

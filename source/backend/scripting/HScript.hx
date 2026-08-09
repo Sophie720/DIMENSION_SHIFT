@@ -8,15 +8,19 @@ class HScript extends Iris
     override public function new(script:String)
     {
         var rules:RawIrisConfig = {name: script, autoRun: true, autoPreset: true};
-        var content = 'import flixel.*;\n';
-        content += sys.io.File.getContent(Paths.getScript(script));
+        var content = sys.io.File.getContent(Paths.getScript(script));
 
         super(content, rules);
 
         set('DialogueHandler', DialogueHandler);
+        set('Language', Language);
+        set('game', ShiftState.state);
+        set('ShiftSprite', shift.ShiftSprite);
+        set('ShiftSpriteGroup', shift.ShiftSpriteGroup);
+        set('ShiftState', shift.ShiftState);
     }
 
-    override public function call(func:String, ?args:Array<Dynamic>):Dynamic
+    override public function call(func:String, ?args:Array<Dynamic>):IrisCall
     {
 		if (exists(func))
 			return super.call(func, args);

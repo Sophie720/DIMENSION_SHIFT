@@ -9,12 +9,13 @@ class DialogueHandler
 
 	public static function start(id:String, ?parameters:DialogueParameters):Dialogue
     {
-		var text = Main.languages.get(Language.language).data.get(id);
+		var text = Language.getPhrase(id);
+		if (text == null)
+			text = 'Phrase not found: $id';
 		if (dialogueExists) {
 			dialogueQueue.push(() -> start(id, parameters));
 			return null;
 		}
-
 
 		@:privateAccess
 		var dialogue = new Dialogue(text, parameters);
