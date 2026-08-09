@@ -1,2 +1,0 @@
-test1=This is a test, but modded
-test2=This is also a test, but also modded.
