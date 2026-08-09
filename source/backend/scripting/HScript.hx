@@ -15,4 +15,11 @@ class HScript extends Iris
 
         set('DialogueHandler', DialogueHandler);
     }
+
+    override public function call(func:String, ?args:Array<Dynamic>):Dynamic
+    {
+		if (exists(func))
+			return super.call(func, args);
+		return null;
+	}
 }
