@@ -11,7 +11,7 @@ class Language
     {
         try 
         {
-            var file = File.getContent(Paths.getText('lang/$lang'));
+            var file = Paths.getLanguage(lang);
             var lines = file.split('\n');
 
             for (line in lines)
@@ -20,5 +20,7 @@ class Language
                 data.set(phrase[0], phrase[1]);
             }
         }
+
+        trace(data);
     }
 }
