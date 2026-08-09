@@ -1,5 +1,6 @@
 #if !macro
 import backend.*;
+import backend.scripting.*;
 import flixel.*;
 import flixel.util.FlxColor;
 import flixel.sound.*;

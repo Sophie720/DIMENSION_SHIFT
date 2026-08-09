@@ -4,6 +4,18 @@ import flixel.util.FlxColor;
 
 class PlayState extends ShiftState
 {
+	var hscript:HScript;
+
+	public function call(func:String, ?args:Array<Dynamic>):Dynamic
+	{
+		if (hscript != null)
+		{
+			if (hscript.exists(func))
+				return hscript.call(func, args);
+		}
+		return null;
+	}
+
 	override public function create()
 	{
 		var bg = new FlxSprite();
@@ -12,12 +24,13 @@ class PlayState extends ShiftState
 		add(bg);
 		super.create();
 
-		DialogueHandler.startDialogue('test1');
-		DialogueHandler.startDialogue('test2');
+		hscript = new HScript('test');
+		call('create');
 	}
 
 	override public function update(elapsed:Float)
 	{
 		super.update(elapsed);
+		call('update', [elapsed]);
 	}
 }

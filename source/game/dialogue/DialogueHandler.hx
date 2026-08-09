@@ -7,11 +7,11 @@ class DialogueHandler
 	public static var dialogueExists:Bool = false;
 	private static var dialogueQueue:Array<Void->Dialogue> = [];
 
-	public static function startDialogue(id:String, ?parameters:DialogueParameters):Dialogue
+	public static function start(id:String, ?parameters:DialogueParameters):Dialogue
     {
 		var text = Main.languages.get(Language.language).data.get(id);
 		if (dialogueExists) {
-			dialogueQueue.push(() -> startDialogue(id, parameters));
+			dialogueQueue.push(() -> start(id, parameters));
 			return null;
 		}
 
