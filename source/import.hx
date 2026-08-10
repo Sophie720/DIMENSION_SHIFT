@@ -7,6 +7,7 @@ import flixel.util.FlxColor;
 import flixel.sound.*;
 import game.dialogue.DialogueHandler;
 import shift.*;
+import game.*;
 
 using StringTools;
 using backend.util.BoolUtil;

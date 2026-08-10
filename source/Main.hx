@@ -16,7 +16,7 @@ class Main extends Sprite
 		Paths.initMods();
 		Language.init();
 		super();
-		addChild(new FlxGame(0, 0, PlayState, 30, 30, true));
+		addChild(new FlxGame(0, 0, MainState, 30, 30, true));
 
 		trace('DIMENSION/SHIFT version ${gameVersion}');
 	}

@@ -1,10 +1,16 @@
-package;
+package game;
 
 import flixel.util.FlxColor;
 
 class PlayState extends ShiftState
 {
 	var hscript:HScript;
+
+	override public function new(state:String)
+	{
+		hscript = new HScript(state);
+		super();
+	}
 
 	override public function create()
 	{
@@ -14,7 +20,6 @@ class PlayState extends ShiftState
 		add(bg);
 		super.create();
 
-		hscript = new HScript('test');
 		hscript.call('create');
 	}
 
