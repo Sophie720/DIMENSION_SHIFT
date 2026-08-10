@@ -65,7 +65,7 @@ class Paths {
 		for (mod in modsArray)
 		{
 			var path = '$MODS$mod/$file';
-			if (FileSystem.exists(path))
+			if (FileSystem.exists(path) && mod.enabled)
 				content += '\n${File.getContent(path)}';
 		}
 
