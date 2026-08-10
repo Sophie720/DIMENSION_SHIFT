@@ -13,8 +13,13 @@ class TitleState extends ShiftState
         press.setFormat(Paths.getFont('font'), 16);
         press.screenCenter(X);
 
+        var version = new FlxText(0, FlxG.height, 'v' + Main.gameVersion);
+        version.setFormat(Paths.getFont('font'), 12);
+        version.y -= version.height;
+
         add(text);
         add(press);
+        add(version);
     }
 
     override function update(elapsed:Float)

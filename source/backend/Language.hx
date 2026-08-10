@@ -22,6 +22,7 @@ class Language
 
     public static function init()
     {
+        trace('Initializing languages...');
         for (file in FileSystem.readDirectory(Paths.ASSETS + 'data/lang/'))
         {
             file = file.toLowerCase();
@@ -31,7 +32,11 @@ class Language
                 languages.set(lang, new Language(lang));
             }
         }
+        trace('Languages: $languages');
     }
+
+    public function toString():String
+        return lang;
 
     public function new(lang:String)
     {

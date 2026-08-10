@@ -25,6 +25,7 @@ class SaveData
 
     public static function setBinds(v:Dynamic)
     {
+        trace('Initializing binds...');
         KeyBinds.binds.ACCEPT = v.ACCEPT;
         KeyBinds.binds.BACK = v.BACK;
         KeyBinds.binds.MENU = v.MENU;
@@ -36,6 +37,7 @@ class SaveData
 
     public static function initPrefs()
     {
+        trace('Initializing preferences...');
         prefs = new ChromaSave('prefs');
         prefs.parse();
 
@@ -49,6 +51,7 @@ class SaveData
 
     public static function init(saveInd:Int):Void
     {
+        trace('Initializing save file $saveInd...');
         var save = new ChromaSave('save$CUR_ACT-$saveInd');
         save.parse();
         save.save();

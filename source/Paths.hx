@@ -21,6 +21,7 @@ class Paths {
 
 	public static function initMods()
 	{
+		trace('Initializing mods...');
 		if (!FileSystem.exists(MODS))
 			FileSystem.createDirectory(MODS);
 
