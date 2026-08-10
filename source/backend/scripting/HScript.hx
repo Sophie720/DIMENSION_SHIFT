@@ -14,6 +14,7 @@ class HScript extends Iris
 
         set('DialogueHandler', DialogueHandler);
         set('Language', Language);
+        set('Paths', Paths);
         set('game', ShiftState.state);
         set('ShiftSprite', shift.ShiftSprite);
         set('ShiftSpriteGroup', shift.ShiftSpriteGroup);
