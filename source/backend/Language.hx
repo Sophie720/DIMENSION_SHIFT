@@ -23,7 +23,20 @@ class Language
     public static function init()
     {
         trace('Initializing languages...');
-        for (file in FileSystem.readDirectory(Paths.ASSETS + 'data/lang/'))
+        var files = FileSystem.readDirectory(Paths.ASSETS + 'data/lang/');
+        for (mod in Paths.mods)
+        {
+            var path = '${Paths.MODS}$mod/data/lang/';
+            if (FileSystem.exists(path))
+            {
+                for (file in FileSystem.readDirectory(path))
+                {
+                    if (!files.contains(file))
+                        files.push(file);
+                }
+            }
+        }
+        for (file in files)
         {
             file = file.toLowerCase();
             if (file.endsWith('.txt'))
@@ -43,13 +56,16 @@ class Language
 		this.lang = lang;
         try 
         {
-            var file = Paths.getLanguage(lang);
+            var file = '';
+            if (lang != 'english')
+                file = Paths.getLanguage('english');
+            file += '\n${Paths.getLanguage(lang)}';
             var lines = file.split('\n');
 
             for (line in lines)
             {
                 line.trim();
-                if (trimmed.length == 0 || line.startsWith('#'))
+                if (line.length == 0 || line.startsWith('#'))
                     continue;
                 var phrase = line.split('=');
                 if (phrase.length >= 2)
