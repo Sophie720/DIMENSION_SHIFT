@@ -4,7 +4,6 @@ import sys.FileSystem;
 import sys.io.File;
 
 class Paths {
-	public static var CUR_MOD:String = 'test-mod';
 	inline public static final ASSETS:String = './assets/';
 	inline public static final MODS:String = './mods/';
 	inline public static final MODS_LIST:String = './mods.list';
