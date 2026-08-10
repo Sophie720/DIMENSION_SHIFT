@@ -1,9 +1,5 @@
 package game.menus;
 
-/**
-    TO BE CHANGED
-**/
-
 class TitleState extends ShiftState
 {
     override function create()
