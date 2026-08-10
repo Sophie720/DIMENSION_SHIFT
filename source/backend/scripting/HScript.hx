@@ -16,9 +16,9 @@ class HScript extends Iris
         set('Language', Language);
         set('Paths', Paths);
         set('game', ShiftState.state);
-        set('ShiftSprite', shift.ShiftSprite);
-        set('ShiftSpriteGroup', shift.ShiftSpriteGroup);
-        set('ShiftState', shift.ShiftState);
+        set('ShiftSprite', ShiftSprite);
+        set('ShiftSpriteGroup', ShiftSpriteGroup);
+        set('ShiftState', ShiftState);
     }
 
     override public function call(func:String, ?args:Array<Dynamic>):IrisCall
