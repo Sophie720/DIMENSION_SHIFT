@@ -5,7 +5,13 @@ import sys.FileSystem;
 
 class Language
 {
-    public static var language:String = 'english';
+    public static var language(default, set):String = 'english';
+    public static function set_language(v:String):String
+    {
+        SaveData.prefs.set('language', v);
+        SaveData.prefs.save();
+        return v;
+    }
     public static var languages:Map<String, Language> = new Map();
 
     public var data:Map<String, String> = new Map();
