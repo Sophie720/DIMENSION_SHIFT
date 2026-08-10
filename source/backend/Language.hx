@@ -5,11 +5,11 @@ import sys.FileSystem;
 
 class Language
 {
-    public static var language:String = 'spanish';
+    public static var language:String = 'english';
     public static var languages:Map<String, Language> = new Map();
 
     public var data:Map<String, String> = new Map();
-		public var lang:String;
+	public var lang:String;
 
     inline public static function getPhrase(key:String):String
         return languages.get(language).data.get(key);
@@ -22,7 +22,6 @@ class Language
             if (file.endsWith('.txt'))
             {
                 var lang = file.substring(0, file.length - 4);
-                trace(lang);
                 languages.set(lang, new Language(lang));
             }
         }
@@ -30,7 +29,7 @@ class Language
 
     public function new(lang:String)
     {
-				this.lang = lang;
+		this.lang = lang;
         try 
         {
             var file = Paths.getLanguage(lang);

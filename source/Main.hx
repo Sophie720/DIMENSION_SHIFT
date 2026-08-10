@@ -13,6 +13,7 @@ class Main extends Sprite
 
 	public function new()
 	{
+		Paths.initMods();
 		Language.init();
 		super();
 		addChild(new FlxGame(0, 0, PlayState, 30, 30, true));

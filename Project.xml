@@ -16,6 +16,7 @@
 	<source path="source" />
 	<assets path="assets" />
 	<assets path="mods"/>
+	<assets path="mods.list"/>
 
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />

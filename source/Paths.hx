@@ -5,24 +5,53 @@ import sys.io.File;
 
 class Paths {
 	public static var CUR_MOD:String = 'test-mod';
-	public static var ASSETS:String = 'assets/';
-	public static var MODS:String = 'mods/';
+	inline public static final ASSETS:String = 'assets/';
+	inline public static final MODS:String = 'mods/';
+	inline public static final MODS_LIST:String = 'mods.list';
+	
+	public static var mods:Array<Mod> = [];
+
+	public static function saveMods()
+	{
+		var file = '';
+		for (mod in mods)
+			file += '${mod.id}|${mod.enabled.toInt()}\n';
+
+		File.saveContent(file, MODS_LIST);
+	}
+
+	public static function initMods()
+	{
+		if (!FileSystem.exists(MODS))
+			FileSystem.createDirectory(MODS);
+
+		for (mod in FileSystem.readDirectory(MODS))
+		{
+			if (FileSystem.isDirectory(MODS + mod))
+			{
+				mods.push(new Mod(mod));
+			}
+		}
+
+		trace('Loaded mods: $mods');
+	}
 
 	public static function getPath(file:String):String
 	{
 		var path = '';
-		if (CUR_MOD != null)
+		for (mod in mods)
 		{
-			path = '$MODS$CUR_MOD/$file';
-			if (!FileSystem.exists(path))
-			{
-				path = '$ASSETS$file';
-			}
-			return path;
+			if (!mod.enabled)
+				continue;
+			path = '$MODS$mod/$file';
+			if (FileSystem.exists(path))
+				return path;
 		}
-		else
-			return '$ASSETS$file';
+		return '$ASSETS$file';
 	}
+
+	inline public static function getFile(file:String):String
+		return File.getContent(getPath(file));
 
 	public static function getFile_append(file:String):String
 	{
@@ -30,12 +59,16 @@ class Paths {
 		if (FileSystem.exists('$ASSETS$file'))
 			content += File.getContent('$ASSETS$file');
 
-		if (CUR_MOD != null)
+		var modsArray = mods.copy();
+		modsArray.reverse();
+
+		for (mod in modsArray)
 		{
-			var path = '$MODS$CUR_MOD/$file';
+			var path = '$MODS$mod/$file';
 			if (FileSystem.exists(path))
 				content += '\n${File.getContent(path)}';
 		}
+
 		return content;
 	}
 
