@@ -17,9 +17,14 @@ class TitleState extends ShiftState
         version.setFormat(Paths.getFont('font'), 12);
         version.y -= version.height;
 
+        var act = new FlxText(0, text.y + text.height, 'ACT 1');
+        act.setFormat(Paths.getFont('font'), 16);
+        act.screenCenter(X);
+
         add(text);
         add(press);
         add(version);
+        add(act);
     }
 
     override function update(elapsed:Float)

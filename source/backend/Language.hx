@@ -48,8 +48,12 @@ class Language
 
             for (line in lines)
             {
+                line.trim();
+                if (trimmed.length == 0 || line.startsWith('#'))
+                    continue;
                 var phrase = line.split('=');
-                data.set(phrase[0], phrase[1].trim());
+                if (phrase.length >= 2)
+                    data.set(phrase[0].trim(), phrase[1].trim());
             }
         }
     }
