@@ -13,11 +13,20 @@ class Main extends Sprite
 
 	public function new()
 	{
+		try
+		{
+			SaveData.initPrefs();
+			SaveData.curSave_index = 0;
+		} catch(e:Dynamic)
+		{
+			trace(e);
+		}
+
 		Paths.initMods();
 		Language.init();
 		super();
 		addChild(new FlxGame(0, 0, MainState, 30, 30, true));
 
-		trace('DIMENSION/SHIFT version ${gameVersion}');
+		trace('DIMENSION/SHIFT v$gameVersion');
 	}
 }
