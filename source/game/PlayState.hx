@@ -4,11 +4,16 @@ import flixel.util.FlxColor;
 
 class PlayState extends ShiftState
 {
+	public static var curMap:String;
 	var hscript:HScript;
 
-	override public function new(state:String)
+	public static function loadMap(map:String)
+		FlxG.switchState(new PlayState(map));
+
+	override public function new(map:String)
 	{
-		hscript = new HScript(state);
+		hscript = new HScript('maps/' + map);
+		curMap = map;
 		super();
 	}
 

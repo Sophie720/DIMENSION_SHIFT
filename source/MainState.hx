@@ -1,9 +1,11 @@
 package;
 
-class MainState extends ShiftSprite
+import game.menus.TitleState;
+
+class MainState extends ShiftState
 {
     override function create()
     {
-        FlxG.switchState(new PlayState('test'));
+        FlxG.switchState(new TitleState());
     }
 }

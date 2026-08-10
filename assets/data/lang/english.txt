@@ -1,3 +1,4 @@
 _lang=English
+menu.title.start=Press ACCEPT to start
 test1=This is a test
 test2=This is also a test.
