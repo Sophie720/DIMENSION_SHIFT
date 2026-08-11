@@ -23,7 +23,7 @@ class SaveData
     public static function get_curSave()
         return saves.get(curSave_index);
 
-    public static function setBinds(v:Dynamic)
+    static function setBinds(v:Dynamic)
     {
         trace('Initializing binds...');
         KeyBinds.binds.ACCEPT = v.ACCEPT;
@@ -45,6 +45,7 @@ class SaveData
         @:privateAccess
         new KeyBinds();
         prefs.addField('keybinds', KeyBinds.dummy(), setBinds);
+        prefs.addField('mods', [], (v)->Mods.mods = cast(v));
 
         prefs.save();
     }

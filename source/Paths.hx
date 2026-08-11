@@ -22,6 +22,8 @@ class Paths {
 	public static function initMods()
 	{
 		trace('Initializing mods...');
+		@:privateAccess
+		Mods.init();
 		if (!FileSystem.exists(MODS))
 			FileSystem.createDirectory(MODS);
 
