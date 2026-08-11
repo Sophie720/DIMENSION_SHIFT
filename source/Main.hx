@@ -16,7 +16,6 @@ class Main extends Sprite
 		try
 		{
 			SaveData.initPrefs();
-			SaveData.curSave_index = 0;
 		} catch(e:Dynamic)
 		{
 			trace(e);
@@ -28,5 +27,19 @@ class Main extends Sprite
 		addChild(new FlxGame(0, 0, MainState, 30, 30, true));
 
 		trace('DIMENSION/SHIFT v$gameVersion');
+	}
+
+	public static function setAct(act:Int)
+	{
+		switch(act)
+		{
+			case 0:
+				FlxG.switchState(new game.menus.TitleState());
+
+			default:
+				trace('Unknown act: $act');
+				return;
+		}
+		SaveData.CUR_ACT = act;
 	}
 }

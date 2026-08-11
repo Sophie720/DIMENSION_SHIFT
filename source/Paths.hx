@@ -88,4 +88,7 @@ class Paths {
 
 	inline public static function getText(file:String) 
 		return getPath('data/$file.txt');
+
+	inline public static function getMusic(file:String)
+		return getPath('music/$file.ogg');
 }

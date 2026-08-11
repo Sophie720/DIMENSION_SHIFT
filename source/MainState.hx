@@ -6,6 +6,6 @@ class MainState extends ShiftState
 {
     override function create()
     {
-        FlxG.switchState(new TitleState());
+        Main.setAct(0);
     }
 }

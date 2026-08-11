@@ -9,6 +9,7 @@ import flixel.sound.*;
 import game.dialogue.DialogueHandler;
 import shift.*;
 import game.*;
+import game.menus.*;
 
 using StringTools;
 using backend.util.BoolUtil;

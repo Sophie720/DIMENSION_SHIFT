@@ -11,10 +11,10 @@ class OptionText extends FlxText
         return v;
     }
 
-    override public function new(x:Float, y:Float, id:String)
+    override public function new(x:Float, y:Float, id:String, size:Int = 16)
     {
         this.id = id;
-        super(x, y, Language.getPhrase('menu.title.options.$id'));
-        setFormat(Paths.getFont('font'), 16, FlxColor.GRAY, CENTER);
+        super(x, y, Language.getPhrase('menu.$id'));
+        setFormat(Paths.getFont('font'), size, FlxColor.GRAY, CENTER);
     }
 }
