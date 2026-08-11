@@ -14,7 +14,7 @@ class OptionText extends FlxText
     override public function new(x:Float, y:Float, id:String, size:Int = 16)
     {
         this.id = id;
-        super(x, y, Language.getPhrase('menu.$id'));
+        super(x, y, Language.getPhrase(id));
         setFormat(Paths.getFont('font'), size, FlxColor.GRAY, CENTER);
     }
 }

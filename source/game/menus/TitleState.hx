@@ -18,7 +18,7 @@ class TitleState extends Act1MenuState
         var i = 0;
         for (option in options)
         {
-            optionsText.set(option, new OptionText(0, (FlxG.height/4)*2 + text.height*i, 'title.$option'));
+            optionsText.set(option, new OptionText(0, (FlxG.height/4)*2 + text.height*i, 'menu.title.$option'));
             optionsText.get(option).screenCenter(X);
             add(optionsText.get(option));
             i++;

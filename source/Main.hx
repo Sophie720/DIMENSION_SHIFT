@@ -40,6 +40,7 @@ class Main extends Sprite
 				trace('Unknown act: $act');
 				return;
 		}
+		openfl.Lib.application.window.title = 'DIMENSION/SHIFT ACT ${act + 1}';
 		SaveData.CUR_ACT = act;
 	}
 }

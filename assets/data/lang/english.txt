@@ -4,6 +4,7 @@ menu.title.start=START
 menu.title.options=OPTIONS
 menu.title.mods=MODS
 menu.save.title=SELECT A SAVE
+menu.save.acts=CHOOSE AN ACT
 menu.save.save=SAVE
 test1=This is a test
 test2=This is also a test.

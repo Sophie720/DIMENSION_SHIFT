@@ -25,4 +25,13 @@ class ShiftState extends FlxState
         FlxG.cameras.add(camHUD);
         FlxG.cameras.add(camDialogue);
     }
+
+    function makeText(x:Float, y:Float, text:String, center:Bool = false, size:Int = 16):FlxText
+    {
+        var text = new FlxText(x, y, text);
+        text.setFormat(Paths.getFont('font'), size);
+        if (center) text.screenCenter(X);
+        add(text);
+        return text;
+    }
 }
