@@ -20,7 +20,6 @@ class ShiftState extends FlxState
 
     override public function create() 
     {
-        FlxG.mouse.visible = false;
         super.create();
 
         FlxG.cameras.add(camHUD);

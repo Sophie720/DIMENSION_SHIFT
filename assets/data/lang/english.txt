@@ -1,4 +1,6 @@
 _lang=English
-menu.title.start=Press ACCEPT to start
+menu.title.options.start=START
+menu.title.options.options=OPTIONS
+menu.title.options.mods=MODS
 test1=This is a test
 test2=This is also a test.

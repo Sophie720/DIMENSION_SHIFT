@@ -4,9 +4,9 @@ import sys.FileSystem;
 import sys.io.File;
 
 class Paths {
-	inline public static final ASSETS:String = './assets/';
-	inline public static final MODS:String = './mods/';
-	inline public static final MODS_LIST:String = './mods.list';
+	inline public static final ASSETS:String = 'assets/';
+	inline public static final MODS:String = 'mods/';
+	inline public static final MODS_LIST:String = 'mods.list';
 	
 	public static var mods:Array<Mod> = [];
 
