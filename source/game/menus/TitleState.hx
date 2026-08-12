@@ -2,7 +2,7 @@ package game.menus;
 
 import game.menus.objects.OptionText;
 
-class TitleState extends Act1MenuState
+class TitleState extends MenuState
 {
     var options:Array<String> = ['start', 'options', 'mods'];
     var optionsText:Map<String, OptionText> = new Map();
@@ -13,7 +13,7 @@ class TitleState extends Act1MenuState
         super.create();
 
         var text = makeText(0, 50, 'DIMENSION/SHIFT', true);
-        makeText(0, text.y + text.height, 'ACT 1', true);
+        makeText(0, text.y + text.height, 'ACT ${SaveData.CUR_ACT + 1}', true);
 
         var i = 0;
         for (option in options)
@@ -27,7 +27,7 @@ class TitleState extends Act1MenuState
         optionsText.get(options[curSelected]).selected = true;
 
         if (FlxG.sound.music == null)
-            FlxG.sound.playMusic(Paths.getMusic('act1'), 1, true);
+            FlxG.sound.playMusic(Paths.getMusic('act${SaveData.CUR_ACT + 1}'), 1, true);
     }
 
     function changeSelection(change:Int = 0):Void
@@ -54,11 +54,20 @@ class TitleState extends Act1MenuState
                     FlxG.switchState(new SaveSelectState());
 
                 case 'options':
-                    trace('todo');
+                    FlxG.switchState(new OptionsState());
 
                 case 'mods':
                     trace('todo');
             }
         }
+
+        #if ACT_SELECT
+        if (Controls.BACK_P)
+        {
+            FlxG.sound.music.stop();
+            FlxG.sound.music = null;
+            FlxG.switchState(new ActSelectState());
+        }
+        #end
     }
 }

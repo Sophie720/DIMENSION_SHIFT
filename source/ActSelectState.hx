@@ -18,6 +18,7 @@ class ActSelectState extends ShiftState
 
     override function create()
     {
+        openfl.Lib.application.window.title = 'DIMENSION/SHIFT';
         super.create();
 
         var text = makeText(0, 0, Language.getPhrase('menu.acts.title'), true);

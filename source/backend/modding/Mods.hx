@@ -8,10 +8,8 @@ typedef ModSave =
 
 class Mods
 {
-    public static var mods:Array<ModSave> = new Array();
+    public static var mods(get, never):Array<ModSave>;
 
-    static function init()
-    {
-        mods = SaveData.prefs.get('mods');
-    }
+    public static function get_mods():Array<ModSave>
+        return cast SaveData.prefs.get('mods');
 }

@@ -5,6 +5,8 @@ class OptionText extends FlxText
     public var selected(default, set):Bool;
     public var id:String;
 
+    public var defaultText:String;
+
     public function set_selected(v:Bool)
     {
         color = v ? FlxColor.WHITE : FlxColor.GRAY;
@@ -14,7 +16,8 @@ class OptionText extends FlxText
     override public function new(x:Float, y:Float, id:String, size:Int = 16)
     {
         this.id = id;
-        super(x, y, Language.getPhrase(id));
+        defaultText = Language.getPhrase(id);
+        super(x, y, defaultText);
         setFormat(Paths.getFont('font'), size, FlxColor.GRAY, CENTER);
     }
 }

@@ -2,7 +2,7 @@ package game.menus;
 
 import game.menus.objects.OptionText;
 
-class SaveSelectState extends Act1MenuState
+class SaveSelectState extends MenuState
 {
     var options:Array<OptionText> = new Array();
     var curSelected = 0;

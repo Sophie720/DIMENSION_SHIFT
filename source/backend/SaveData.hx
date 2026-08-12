@@ -45,7 +45,8 @@ class SaveData
         @:privateAccess
         new KeyBinds();
         prefs.addField('keybinds', KeyBinds.dummy(), setBinds);
-        prefs.addField('mods', [], (v)->Mods.mods = cast(v));
+        prefs.addField('mods', []);
+        prefs.addField('developerMode', false);
 
         prefs.save();
     }

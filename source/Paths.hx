@@ -22,18 +22,25 @@ class Paths {
 	public static function initMods()
 	{
 		trace('Initializing mods...');
-		@:privateAccess
-		Mods.init();
 		if (!FileSystem.exists(MODS))
 			FileSystem.createDirectory(MODS);
+
+		var list:Array<String> = new Array();
+
+		for (mod in Mods.mods)
+			list.push(mod.id);
 
 		for (mod in FileSystem.readDirectory(MODS))
 		{
 			if (FileSystem.isDirectory(MODS + mod))
 			{
-				mods.push(new Mod(mod));
+				if (!list.contains(mod))
+					Mods.mods.push({id: mod, enabled: true});
+				mods.push(new Mod(mod, Mods.mods[Mods.mods.length - 1].enabled));
 			}
 		}
+
+		SaveData.prefs.save();
 
 		trace('Loaded mods: $mods');
 	}

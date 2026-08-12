@@ -1,11 +1,11 @@
 package game.menus;
 
-class Act1MenuState extends ShiftState
+class MenuState extends ShiftState
 {
     var bg:ShiftSprite;
     override function create()
     {
-        bg = new ShiftSprite(0, 0, Paths.getImage('act1'));
+        bg = new ShiftSprite(0, 0, Paths.getImage('act${SaveData.CUR_ACT + 1}'));
         bg.setGraphicSize(FlxG.width, FlxG.height);
         bg.screenCenter();
         add(bg);
