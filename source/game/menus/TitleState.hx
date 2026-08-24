@@ -6,7 +6,7 @@ class TitleState extends MenuState
 {
     var options:Array<String> = ['start', 'options', 'mods'];
     var optionsText:Map<String, OptionText> = new Map();
-    var curSelected = 0;
+    static var curSelected = 0;
 
     override function create()
     {

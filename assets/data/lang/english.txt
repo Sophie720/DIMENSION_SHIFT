@@ -11,3 +11,19 @@ test2=This is also a test.
 
 # optionsMenu
 menu.options.developerMode=Developer Mode
+menu.options.fullscreen=Fullscreen
+
+#cutscenes
+intro.dream01=Hey...Kai...open your presents!
+intro.dream02=Oh, okay!
+intro.dream03=Wow! This stuff is so cool!
+intro.dream04=Thank you guys so much!
+intro.dream05=...
+#kai's family fades
+intro.dream06=It was all your fault.
+intro.dream07=The reason they aren't here with you today...it's all your fault.
+intro.dream08=You need to-
+#kai wakes up
+act1.cutscene.intro001=...
+act1.cutscene.intro002=Same dream again, huh...?
+act1.cutscene.intro003=Well, time to start my day.

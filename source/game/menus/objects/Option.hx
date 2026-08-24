@@ -15,11 +15,6 @@ class Option extends OptionText
 
     public function set_value(v:Dynamic):Dynamic
     {
-        if (type == BOOL)
-        {
-            v = cast(v, Bool);
-            text = '${defaultText} [${v ? 'X' : ' '}]';
-        }
         SaveData.prefs.set(save, v);
         return v;
     }
@@ -31,5 +26,17 @@ class Option extends OptionText
         this.type = type;
         save = saveVariable;
         value = SaveData.prefs.get(saveVariable);
+        updateText();
+    }
+
+    public function updateText()
+    {
+        if (type == BOOL)
+        {
+            var sel = '[ ]';
+            if (SaveData.prefs.get(save))
+                sel = '[X]';
+            text = '${defaultText} $sel';
+        }
     }
 }

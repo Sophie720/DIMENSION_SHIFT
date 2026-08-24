@@ -1,10 +1,12 @@
 package game.menus;
 
-import game.menus.objects.*;
+import game.menus.objects.Option;
+import game.menus.objects.Option.OptionType;
 
 class OptionsState extends MenuState
 {
-    var options = ['developerMode'];
+    var options = ['developerMode', 'fullscreen'];
+    var types:Array<OptionType> = [BOOL, BOOL];
     var optionText:Array<Option> = new Array();
     var curSelected = 0;
     override function create()
@@ -51,7 +53,12 @@ class OptionsState extends MenuState
         if (Controls.ACCEPT_P)
         {
             if (optionText[curSelected].type == BOOL)
+            {
+                if (options[curSelected] == 'fullscreen')
+                    Main.fullscreen = !Main.fullscreen;
                 optionText[curSelected].value = !optionText[curSelected].value;
+                optionText[curSelected].updateText();
+            }
         }
     }
 }

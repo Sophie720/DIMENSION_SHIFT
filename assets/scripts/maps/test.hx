@@ -1,5 +1,5 @@
 function create()
 {
-    DialogueHandler.start('test1');
-    DialogueHandler.start('test2');
+    DialogueHandler.startMultiple(['01', '02', '03', '04', '05', '06', '07', '08'], 'intro.dream');
+    DialogueHandler.startMultiple(['001', '002', '003'], 'act1.cutscene.intro');
 }

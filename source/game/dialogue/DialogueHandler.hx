@@ -27,6 +27,13 @@ class DialogueHandler
 
         return dialogue;
     }
+
+	public static function startMultiple(dialogues:Array<String>, prefix:String = '')
+	{
+		for (dialogue in dialogues)
+			start(prefix + dialogue);
+	}
+
 	private static function dialogueDestroyed() {
 		dialogueExists = false;
 

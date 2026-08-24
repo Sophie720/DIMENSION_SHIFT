@@ -8,7 +8,8 @@ class HScript extends Iris
     override public function new(script:String)
     {
         var rules:RawIrisConfig = {name: script, autoRun: true, autoPreset: true};
-        var content = sys.io.File.getContent(Paths.getScript(script));
+        var content = 'using backend.scripting.util.SpriteUtil\n';
+        content += sys.io.File.getContent(Paths.getScript(script));
 
         super(content, rules);
 

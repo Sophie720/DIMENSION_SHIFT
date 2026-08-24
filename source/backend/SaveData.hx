@@ -47,6 +47,7 @@ class SaveData
         prefs.addField('keybinds', KeyBinds.dummy(), setBinds);
         prefs.addField('mods', []);
         prefs.addField('developerMode', false);
+        prefs.addField('fullscreen', false, (v)->Main.fullscreen = v);
 
         prefs.save();
     }
