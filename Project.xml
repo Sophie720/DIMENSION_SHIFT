@@ -21,15 +21,17 @@
 	<assets path="assets" />
 	<assets path="mods"/>
 	<assets path="mods.list"/>
+	<assets path="include/icon.png" rename="icon.png"/>
 
 	<haxelib name="flixel" />
 	<haxelib name="flixel-addons" />
 	<haxelib name="hscript-iris"/>
 	<haxelib name="chromasave"/>
-	<haxelib name="hxdiscord_rpc" if="desktop"/>
+	<haxelib name="hxdiscord_rpc" if="cpp"/>
 
 	<haxedef name="FLX_NO_DEBUG" unless="debug" />
 	<haxedef name="message.reporting" value="pretty" />
 
 	<haxeflag name="-dce" value="std" />
+	<icon path="include/icon.png" />
 </project>

@@ -50,7 +50,7 @@ class SaveSelectState extends MenuState
         if (Controls.ACCEPT_P)
         {
             SaveData.curSave_index = curSelected;
-            PlayState.loadMap('test');
+            PlayState.loadMap('test', 0, 0);
         }
     }
 }

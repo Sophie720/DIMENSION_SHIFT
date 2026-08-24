@@ -5,6 +5,12 @@ import backend.SaveData;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 import backend.system.DiscordClient;
+import openfl.Lib;
+
+#if (linux || mac)
+import lime.graphics.Image;
+#end
+
 
 class Main extends Sprite
 {
@@ -43,6 +49,12 @@ class Main extends Sprite
 		DiscordClient.initialize();
 		#end
 		trace('DIMENSION/SHIFT v$gameVersion');
+
+		#if (linux || mac)
+		var icon = Image.fromFile("icon.png");
+		Lib.current.stage.window.setIcon(icon);
+		#end
+
 	}
 
 	public static function setAct(act:Int)
