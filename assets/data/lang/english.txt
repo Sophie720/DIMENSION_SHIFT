@@ -18,12 +18,24 @@ intro.dream01=Hey...Kai...open your presents!
 intro.dream02=Oh, okay!
 intro.dream03=Wow! This stuff is so cool!
 intro.dream04=Thank you guys so much!
-intro.dream05=...
-#kai's family fades
-intro.dream06=It was all your fault.
-intro.dream07=The reason they aren't here with you today...it's all your fault.
-intro.dream08=You need to-
+intro.dream05=Let's go get some ice cream, Kai!
+#switch to an image of the car crash
+intro.dream06=...
+intro.dream07=It was all your fault.
+intro.dream08=The reason they aren't here with you today...it's all your fault.
+intro.dream09=All your fault...
 #kai wakes up
 act1.cutscene.intro001=...
 act1.cutscene.intro002=Same dream again, huh...?
 act1.cutscene.intro003=Well, time to start my day.
+
+act1.cutscene.intro101=Huh??
+act1.cutscene.intro102=That's...different.
+
+act1.cutscene.intro201.alex=HEY!!!!!!!!
+act1.cutscene.intro202.kai=Uh...what was that?
+act1.cutscene.intro203.kai=Oh...hi Alex.
+act1.cutscene.intro204.alex=Kai! I was just sent here to get you!
+act1.cutscene.intro205.kai=Uh...can you possibly explain...anything that's happening?
+act1.cutscene.intro206.alex=Sadly, I cannot. I am simply here you to take you to the camp.
+act1.cutscene.intro207.kai=Camp? Well, lead the way, Alex.
